@@ -315,6 +315,16 @@ footer b{font-family:"Aref Ruqaa",serif;color:var(--gold2)}
   .head h2{font-size:28px;padding-inline:30px}
   .pub h3{font-size:19px}
 }
+
+/* stock lattice cover */
+.hero{background:var(--hero) url(assets/cover.jpg) center/cover no-repeat}
+.hero svg.pattern{display:none}
+.hero .wrap{padding-block:40px 96px}
+.frame{width:min(960px,100%);background:rgba(9,29,50,.9);box-shadow:0 10px 34px rgba(5,16,28,.55)}
+@media (max-width:860px){
+  .hero .wrap{padding-block:24px 78px}
+  .frame{width:calc(100% - 12px)}
+}
 </style>
 </head>
 <body>
