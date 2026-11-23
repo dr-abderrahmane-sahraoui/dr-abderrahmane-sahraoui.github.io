@@ -140,10 +140,15 @@ ul.clean{list-style:none;margin:0;padding:0}
 .contact a:hover{border-color:var(--gold)}
 .contact b{display:block;color:var(--accent);font-size:19px}
 .contact span{display:block;color:var(--muted);font-size:17px;direction:ltr;text-align:right;overflow-wrap:anywhere}
-.visitors{margin-top:36px}
-.visitors h3{font-size:24px;margin-bottom:4px}
-.visitors p{color:var(--muted);font-size:16px;margin-bottom:12px}
-.visitors img{max-width:100%;height:auto;border-radius:6px}
+.vband{background:var(--sunk);border-bottom:1px solid var(--line)}
+.vband .wrap{display:grid;grid-template-columns:230px minmax(0,1fr);gap:36px;align-items:center;padding-block:24px}
+.vtotal[hidden]{display:none}
+.vtotal{text-align:center;padding-inline-end:36px;border-inline-end:1px solid var(--line)}
+.vtotal b{display:block;font-family:Amiri,serif;font-size:50px;line-height:1.15;color:var(--accent)}
+.vtotal span{display:block;color:var(--muted);font-size:16px;line-height:1.6}
+.vflags h2{font-size:24px;color:var(--accent);margin-bottom:8px}
+.vflags a{display:inline-block;max-width:100%}
+.vflags img{display:block;max-width:100%;height:auto;border-radius:6px}
 footer{background:var(--hero);color:var(--hero-muted);padding-block:30px;font-size:16px}
 footer b{font-family:Amiri,serif;font-size:22px;color:var(--hero-ink);display:block}
 
@@ -156,6 +161,8 @@ footer b{font-family:Amiri,serif;font-size:22px;color:var(--hero-ink);display:bl
   .nav nav a{padding:2px 12px}
   .hero .wrap>*,.two>*,.grid>*,.book>*{min-width:0;max-width:100%}
   .search{min-width:0;width:100%}
+  .vband .wrap{grid-template-columns:minmax(0,1fr);gap:16px;text-align:center}
+  .vtotal{padding:0 0 14px;border-inline-end:0;border-bottom:1px solid var(--line)}
   .pub.cov{grid-template-columns:104px minmax(0,1fr);gap:14px}
   .mini{height:150px}.mini b{font-size:14px;-webkit-line-clamp:4}.mini small{display:none}
   .hero .wrap{grid-template-columns:1fr;gap:8px;padding-top:40px;justify-items:center;text-align:center}
@@ -206,6 +213,11 @@ footer b{font-family:Amiri,serif;font-size:22px;color:var(--hero-ink);display:bl
   <div class="stat"><b>15</b><span>بحثًا قيد التحكيم</span></div>
   <div class="stat"><b>4</b><span>مجلات يُحكِّم فيها</span></div>
 </div></div>
+
+<section class="vband" aria-label="إحصاءات الزوار"><div class="wrap">
+  <div class="vtotal"><b id="vcount">—</b><span>زيارة للموقع</span></div>
+  <div class="vflags"><h2>الزوار من البلدان</h2><a href="https://info.flagcounter.com/DqDd" target="_blank" rel="noopener"><picture><source media="(max-width:640px)" srcset="https://s05.flagcounter.com/count2/DqDd/bg_FFFDF8/txt_2A2320/border_E2D7C3/columns_2/maxflags_12/viewers_3/labels_1/pageviews_0/flags_0/percent_1/"><img src="https://s05.flagcounter.com/count2/DqDd/bg_FFFDF8/txt_2A2320/border_E2D7C3/columns_4/maxflags_12/viewers_3/labels_1/pageviews_0/flags_0/percent_1/" alt="أعلام البلدان الزائرة ونسبة الزوار من كل بلد"></picture></a></div>
+</div></section>
 
 <section class="block" id="about"><div class="wrap two">
   <div>
@@ -303,7 +315,6 @@ footer b{font-family:Amiri,serif;font-size:22px;color:var(--hero-ink);display:bl
     <a href="mailto:abderrahmane199426@gmail.com"><b>البريد الإلكتروني</b><span>abderrahmane199426@gmail.com</span></a>
     <a href="https://wa.me/966568723253" target="_blank" rel="noopener"><b>واتساب</b><span>+966 56 872 3253</span></a>
   </div>
-  <div class="visitors"><h3>زوار الموقع من البلدان</h3><p>نسبة الزوار من كل بلد، وتتحدث تلقائيًّا.</p><a href="https://info.flagcounter.com/DqDd" target="_blank" rel="noopener"><img src="https://s05.flagcounter.com/count2/DqDd/bg_FFFDF8/txt_2A2320/border_E2D7C3/columns_3/maxflags_12/viewers_0/labels_1/pageviews_1/flags_0/percent_1/" alt="نسب زوار الموقع حسب البلدان"></a></div>
 </div></section>
 </main>
 
@@ -348,6 +359,7 @@ list.addEventListener('click',async e=>{const b=e.target.closest('[data-c]');if(
   try{await navigator.clipboard.writeText(cite(P[b.dataset.c]));b.textContent='تم النسخ'}catch{b.textContent='تعذّر النسخ'}
   setTimeout(()=>b.textContent='نسخ التوثيق',1600)});
 render();
+fetch('https://dr-sahraoui.goatcounter.com/counter/TOTAL.json').then(r=>r.ok?r.json():Promise.reject()).then(d=>{document.getElementById('vcount').textContent=d.count}).catch(()=>{document.querySelector('.vtotal').hidden=true;document.querySelector('.vband .wrap').style.gridTemplateColumns='minmax(0,1fr)'});
 </script>
 <script data-goatcounter="https://dr-sahraoui.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
 </body>
