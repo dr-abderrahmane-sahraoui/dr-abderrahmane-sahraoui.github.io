@@ -100,12 +100,13 @@ ul.clean{list-style:none;margin:0;padding:0}
 .pub h3{font-family:"Noto Naskh Arabic",serif;font-size:20px;font-weight:700;line-height:1.7;margin-top:2px}
 .pub .alt-title{color:var(--muted);font-size:17px}
 .pub .meta{color:var(--muted);font-size:16px;margin-top:2px}
-.pub .acts{display:flex;gap:16px;margin-top:6px;font-size:16px}
-.pub .acts a,.pub .acts button{font:inherit;background:none;border:0;padding:0;color:var(--accent);cursor:pointer;text-decoration:underline;text-underline-offset:3px}
-.pub.soon{display:grid;grid-template-columns:128px minmax(0,1fr);gap:22px;align-items:start}
+.pub .acts{display:flex;flex-wrap:wrap;gap:2px 16px;margin-top:6px;font-size:16px}
+.pub .acts a,.pub .acts button{white-space:nowrap;font:inherit;background:none;border:0;padding:0;color:var(--accent);cursor:pointer;text-decoration:underline;text-underline-offset:3px}
+.pub.cov{display:grid;grid-template-columns:128px minmax(0,1fr);gap:22px;align-items:start}
 .mini{position:relative;height:178px;overflow:hidden;background:var(--hero);color:var(--hero-ink);border-radius:2px 6px 6px 2px;border-inline-end:4px solid var(--gold);padding:10px 8px 34px;display:flex;flex-direction:column;justify-content:space-between;text-align:center;font-family:Amiri,serif}
 .mini b{font-size:15px;line-height:1.5;display:-webkit-box;-webkit-line-clamp:5;-webkit-box-orient:vertical;overflow:hidden}
 .mini small{font-size:12px;line-height:1.4;color:var(--hero-muted)}
+.mini i.published{background:#2f6b4f;color:#fff}
 .mini i{position:absolute;inset:auto 0 0 0;background:var(--gold);color:#22180c;font-style:normal;font-weight:700;font-size:14px;line-height:28px}
 .note{margin-top:18px;padding-top:14px;border-top:1px solid var(--line);color:var(--muted);font-size:16px}
 .empty{padding:24px 0;color:var(--muted)}
@@ -155,7 +156,7 @@ footer b{font-family:Amiri,serif;font-size:22px;color:var(--hero-ink);display:bl
   .nav nav a{padding:2px 12px}
   .hero .wrap>*,.two>*,.grid>*,.book>*{min-width:0;max-width:100%}
   .search{min-width:0;width:100%}
-  .pub.soon{grid-template-columns:104px minmax(0,1fr);gap:14px}
+  .pub.cov{grid-template-columns:104px minmax(0,1fr);gap:14px}
   .mini{height:150px}.mini b{font-size:14px;-webkit-line-clamp:4}.mini small{display:none}
   .hero .wrap{grid-template-columns:1fr;gap:8px;padding-top:40px;justify-items:center;text-align:center}
   .hero .text{padding-bottom:24px}
@@ -195,7 +196,7 @@ footer b{font-family:Amiri,serif;font-size:22px;color:var(--hero-ink);display:bl
       <p class="lead">عناية بعلم العلل ونقد الحديث، والموطأ والمدرسة المالكية، وتراث علماء الجزائر في الحديث النبوي، وقضايا السنة المعاصرة.</p>
       <div class="cta"><a class="btn primary" href="#research">البحوث العلمية</a><a class="btn" href="#about">السيرة العلمية</a></div>
     </div>
-    <div class="arch"><img src="assets/portrait.jpg" alt="صورة الدكتور عبد الرحمن صحراوي" width="706" height="707"></div>
+    <div class="arch"><img src="assets/portrait.jpg" alt="صورة الدكتور عبد الرحمن صحراوي" width="600" height="811"></div>
   </div>
 </div>
 
@@ -232,7 +233,7 @@ footer b{font-family:Amiri,serif;font-size:22px;color:var(--hero-ink);display:bl
       <button data-f="all" aria-pressed="true">الكل</button>
       <button data-f="published" aria-pressed="false">منشور</button>
       <button data-f="accepted" aria-pressed="false">مقبول للنشر</button>
-      <button data-f="conference" aria-pressed="false">مؤتمرات</button>
+      <button data-f="conference" aria-pressed="false">مداخلات</button>
     </div>
   </div>
   <p class="count" id="count" aria-live="polite"></p>
@@ -289,10 +290,10 @@ footer b{font-family:Amiri,serif;font-size:22px;color:var(--hero-ink);display:bl
 <section class="block alt" id="review"><div class="wrap">
   <div class="head"><h2>التحكيم العلمي</h2><p>مُحكِّم (مراجع) في المجلات العلمية الآتية</p></div>
   <div class="grid">
+    <div class="item"><b>مجلة جامعة الملك خالد للعلوم الشرعية والدراسات الإسلامية</b><span>أبها، المملكة العربية السعودية · ISSN 1658-1180.</span></div>
     <div class="item"><b>مجلة المنهل للبحوث والدراسات الإسلامية</b><span>جامعة الشهيد حمه لخضر، الوادي، الجزائر.</span></div>
     <div class="item"><b>مجلة العلوم الاجتماعية والإنسانية (JOSSH)</b><span>جامعة محمد بوضياف، المسيلة، الجزائر.</span></div>
     <div class="item"><b>مجلة الرواق (ERRIWAK)</b><span>جامعة أحمد زبانة، غليزان، الجزائر · ISSN 2602-6767.</span></div>
-    <div class="item"><b>مجلة جامعة الملك خالد للعلوم الشرعية والدراسات الإسلامية</b><span>أبها، المملكة العربية السعودية · ISSN 1658-1180.</span></div>
   </div>
 </div></section>
 
@@ -321,10 +322,7 @@ const P=[
 {s:'accepted',t:'Hadiths on Epidemic Prevention in the Prophetic Sunnah: A Hadith-Jurisprudential-Medical Study',a:'أحاديث الوقاية من الأوبئة في السنة النبوية: دراسة حديثية فقهية طبية',m:'مجلة الرواق للدراسات الاجتماعية والإنسانية، جامعة أحمد زبانة، غليزان',d:'ISSN 2602-6767'},
 {s:'accepted',t:'Consumer Protection in the Prophetic Sunnah: The Hadith “Whoever Cheats Is Not of Us” as a Foundation for the Duties of Information and Safety',a:'حماية المستهلك في السنة النبوية: حديث «من غشَّ فليس منا» أصلًا لواجبَي الإعلام والسلامة',m:'المجلة الجزائرية للعلوم القانونية والسياسية، جامعة الجزائر 1',d:'ISSN 2716-8239'},
 {s:'accepted',t:'معايير نقد المتن عند المحدثين وتوظيفها في التحقق من المحتوى الرقمي: دراسة تأصيلية مقارنة',m:'مجلة المعيار، جامعة الأمير عبد القادر للعلوم الإسلامية، قسنطينة',d:'ISSN 2588-2384'},
-{s:'conference',st:'مداخلة ملقاة',t:'قيم التجديد في الخطاب القرآني وتجلّياتها في البيان النبوي: دراسة تأصيلية في ضوء الكتاب والسنة',m:'الملتقى الوطني، مخبر البينية في الدراسات القرآنية والمعارف الإنسانية، جامعة الوادي',d:'4 يوليو 2026م، عن بُعد'},
-{s:'conference',st:'مقبول مبدئيًّا',t:'توظيف الذكاء الاصطناعي في خدمة السنة النبوية (تأصيل شرعي وضوابط منهجية)',m:'مؤتمر «الذكاء الاصطناعي: أحكامه الشرعية وتحدياته الفكرية»، جامعة الإمام محمد بن سعود الإسلامية',d:'2026م'},
-{s:'conference',st:'مقبول مبدئيًّا',t:'الذكاء الاصطناعي وحفظ السُّنَّة: الموازنة بين التيسير المقاصدي وصيانة منهج المحدِّثين',a:'Artificial Intelligence and the Preservation of the Sunnah: Balancing Maqāṣid-based Facilitation and Safeguarding the Methodology of the Hadith Scholars',m:'المؤتمر الدولي السابع في الفقه الإسلامي، الجامعة الإسلامية العالمية بماليزيا (IIUM)',d:'10–11 نوفمبر 2026م'},
-{s:'conference',st:'مقبول للمشاركة',t:'الاحتجاج بالحديث النبوي الشريف في الدرس البلاغي العربي بين الإغفال والتفعيل: دراسة تأصيلية تطبيقية',m:'ملتقى وطني، كلية العلوم الإسلامية، جامعة أحمد دراية بأدرار',d:'لم يُعقد الملتقى بعد'}
+{s:'conference',st:'مداخلة ملقاة',t:'قيم التجديد في الخطاب القرآني وتجلّياتها في البيان النبوي: دراسة تأصيلية في ضوء الكتاب والسنة',m:'الملتقى الوطني، مخبر البينية في الدراسات القرآنية والمعارف الإنسانية، جامعة الوادي',d:'4 يوليو 2026م، عن بُعد'}
 ];
 const esc=s=>String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
 const norm=s=>s.toLowerCase().replace(/[ً-ْـ]/g,'').replace(/[أإآ]/g,'ا').replace(/ى/g,'ي').replace(/ة/g,'ه');
@@ -340,8 +338,8 @@ function render(){
     <h3 dir="auto">${esc(p.t)}</h3>${p.a?`<p class="alt-title" dir="auto">${esc(p.a)}</p>`:''}
     <p class="meta">${esc(p.m)} · ${esc(p.d)}</p>
     ${soon?'':`<div class="acts">${p.f?`<a href="papers/${p.f}" download>تحميل البحث PDF</a>`:''}${p.u?`<a href="${ASJP}${p.u}" target="_blank" rel="noopener">صفحة البحث</a>`:''}<button data-c="${i}">نسخ التوثيق</button></div>`}`;
-    if(!soon)return `<article class="pub">${body}</article>`;
-    return `<article class="pub soon"><div class="mini" aria-hidden="true"><b>${esc((p.a||p.t).split(':')[0])}</b><small>${esc(p.m.split('،')[0])}</small><i>سيُنشر قريبًا</i></div><div>${body}</div></article>`}).join(''):'<p class="empty">لا توجد نتائج مطابقة.</p>';
+    const rib=p.s==='published'?'منشور':p.s==='accepted'?'سيُنشر قريبًا':'مداخلة';
+    return `<article class="pub cov"><div class="mini" aria-hidden="true"><b>${esc((p.a||p.t).split(':')[0])}</b><small>${esc(p.m.split('،')[0])}</small><i class="${p.s}">${rib}</i></div><div>${body}</div></article>`}).join(''):'<p class="empty">لا توجد نتائج مطابقة.</p>';
 }
 q.addEventListener('input',render);
 document.getElementById('filters').addEventListener('click',e=>{const b=e.target.closest('button');if(!b)return;f=b.dataset.f;
