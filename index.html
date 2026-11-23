@@ -325,6 +325,13 @@ footer b{font-family:"Aref Ruqaa",serif;color:var(--gold2)}
   .hero .wrap{padding-block:24px 78px}
   .frame{width:calc(100% - 12px)}
 }
+
+/* first-page covers */
+.mini.page{display:block;height:164px;padding:0;background:#fff;outline:1px solid var(--gold);outline-offset:0;box-shadow:0 3px 9px rgba(43,33,24,.3);transition:transform .15s}
+.mini.page:hover{transform:translateY(-2px)}
+.mini.page img{display:block;width:100%;height:100%;object-fit:cover;object-position:top}
+.mini.page i{inset:auto 0 0 0}
+@media (max-width:860px){.mini.page{height:130px}}
 </style>
 </head>
 <body>
@@ -493,6 +500,7 @@ function render(){
     <p class="meta">${esc(p.m)} · ${esc(p.d)}</p>
     ${soon?'':`<div class="acts">${p.f?`<a href="papers/${p.f}" download>تحميل البحث PDF</a>`:''}${p.u?`<a href="${ASJP}${p.u}" target="_blank" rel="noopener">صفحة البحث</a>`:''}<button data-c="${i}">نسخ التوثيق</button></div>`}`;
     const rib=p.s==='published'?'منشور':p.s==='accepted'?'سيُنشر قريبًا':'مداخلة';
+    if(p.f)return `<article class="pub cov"><a class="mini page" href="papers/${p.f}" target="_blank" rel="noopener" aria-label="فتح البحث"><img src="assets/covers/${p.f.replace('.pdf','.jpg')}" alt="الصفحة الأولى من البحث" loading="lazy"><i class="published">منشور</i></a><div>${body}</div></article>`;
     return `<article class="pub cov"><div class="mini" aria-hidden="true"><b>${esc((p.a||p.t).split(':')[0])}</b><small>${esc(p.m.split('،')[0])}</small><i class="${p.s}">${rib}</i></div><div>${body}</div></article>`}).join(''):'<p class="empty">لا توجد نتائج مطابقة.</p>';
 }
 q.addEventListener('input',render);
