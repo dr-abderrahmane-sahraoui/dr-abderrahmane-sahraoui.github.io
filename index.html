@@ -332,6 +332,9 @@ footer b{font-family:"Aref Ruqaa",serif;color:var(--gold2)}
 .mini.page img{display:block;width:100%;height:100%;object-fit:cover;object-position:top}
 .mini.page i{inset:auto 0 0 0}
 @media (max-width:860px){.mini.page{height:130px}}
+
+/* countries only */
+.vband .wrap{grid-template-columns:minmax(0,1fr)}
 </style>
 </head>
 <body>
@@ -365,7 +368,6 @@ footer b{font-family:"Aref Ruqaa",serif;color:var(--gold2)}
 </div></div>
 
 <section class="vband" aria-label="إحصاءات الزوار"><div class="wrap">
-  <div class="vtotal"><b id="vcount">—</b><span>إجمالي الزيارات</span><div class="vdays"><div><small>اليوم</small><strong id="vtoday">—</strong></div><div><small>أمس</small><strong id="vyest">—</strong></div></div></div>
   <div class="vflags"><h2>الزوار من البلدان</h2><ul class="vc" id="vc"></ul><p class="vnote" id="vnote"></p></div>
 </div></section>
 
@@ -510,23 +512,6 @@ list.addEventListener('click',async e=>{const b=e.target.closest('[data-c]');if(
   try{await navigator.clipboard.writeText(cite(P[b.dataset.c]));b.textContent='تم النسخ'}catch{b.textContent='تعذّر النسخ'}
   setTimeout(()=>b.textContent='نسخ التوثيق',1600)});
 render();
-fetch('https://dr-sahraoui.goatcounter.com/counter/TOTAL.json?start=2026-11-23&end='+new Date(Date.now()+864e5).toISOString().slice(0,10)).then(r=>r.ok?r.json():Promise.reject()).then(d=>{document.getElementById('vcount').textContent=d.count}).catch(()=>{document.querySelector('.vtotal').hidden=true;document.querySelector('.vband .wrap').style.gridTemplateColumns='minmax(0,1fr)'});
-(function(){
-  const API='https://dr-sahraoui.goatcounter.com/counter/TOTAL.json',FIRST='2026-11-23';
-  const day=n=>new Date(Date.now()+n*864e5).toISOString().slice(0,10);
-  const show=(id,start,end)=>fetch(`${API}?start=${start}&end=${end}`,{cache:'no-store'}).then(r=>r.ok?r.json():Promise.reject()).then(d=>{document.getElementById(id).textContent=d.count}).catch(()=>{});
-  let last=0;
-  function tick(){
-    last=Date.now();
-    show('vcount',FIRST,day(1));
-    show('vtoday',day(0),day(1));
-    if(day(-1)>=FIRST)show('vyest',day(-1),day(0));
-    else document.getElementById('vyest').title='يبدأ احتساب زوار أمس من 24 نوفمبر 2026';
-  }
-  tick();
-  setInterval(()=>{if(!document.hidden)tick()},60000);
-  document.addEventListener('visibilitychange',()=>{if(!document.hidden&&Date.now()-last>=60000)tick()});
-})();
 (function(){
   const box=document.getElementById('vc'),note=document.getElementById('vnote');
   const names=new Intl.DisplayNames(['ar'],{type:'region'});
