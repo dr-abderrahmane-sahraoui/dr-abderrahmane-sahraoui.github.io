@@ -3,13 +3,13 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>د. عبد الرحمن صحراوي</title>
+<title>المكتبة الرقمية · د. عبد الرحمن صحراوي</title>
 <meta name="description" content="الموقع العلمي للدكتور عبد الرحمن بن محمد الصغير صحراوي، باحث في السنة النبوية وعلومها، محقق ومفهرس مخطوطات: السيرة والبحوث والمؤلفات والإجازات.">
 <meta name="author" content="د. عبد الرحمن بن محمد الصغير صحراوي">
-<meta name="theme-color" content="#4f1c20">
+<meta name="theme-color" content="#0f2f4a">
 <meta property="og:type" content="profile">
 <meta property="og:locale" content="ar_AR">
-<meta property="og:title" content="د. عبد الرحمن صحراوي">
+<meta property="og:title" content="المكتبة الرقمية لمؤلفات وبحوث د. عبد الرحمن صحراوي">
 <meta property="og:description" content="باحث في السنة النبوية وعلومها، محقق ومفهرس مخطوطات: السيرة والبحوث والمؤلفات والإجازات.">
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
 <script type="application/ld+json">
@@ -20,18 +20,18 @@
 <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Noto+Naskh+Arabic:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
 :root{
-  --paper:#faf6ee;--surface:#fffdf8;--sunk:#f2ebdd;--ink:#2a2320;--muted:#6c6158;
-  --line:#e2d7c3;--accent:#7a2a2c;--accent-ink:#fff8ee;--gold:#a87f2f;--hero:#4f1c20;--hero-ink:#fbf1df;--hero-muted:#dcc7a8;
+  --paper:#f7f4ec;--surface:#fffdf8;--sunk:#eee9dc;--ink:#1d2730;--muted:#56626c;
+  --line:#dcd6c6;--accent:#17476b;--accent-ink:#ffffff;--gold:#a87f2f;--hero:#0f2f4a;--hero-ink:#fbf5e6;--hero-muted:#c9d6df;
   --ok:#2f6b4f;--wait:#8a6416;
 }
 @media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
-  --paper:#1b1716;--surface:#252020;--sunk:#2f2927;--ink:#f1e9dc;--muted:#b9ac9c;
-  --line:#40372f;--accent:#e0a3a0;--accent-ink:#2a1414;--gold:#d3ad62;--hero:#321315;--hero-ink:#fbf1df;--hero-muted:#d3bea0;
+  --paper:#10181f;--surface:#18232c;--sunk:#1f2c37;--ink:#eaf0f3;--muted:#a7b5bf;
+  --line:#2f3f4b;--accent:#8fc1e3;--accent-ink:#0e2232;--gold:#d3ad62;--hero:#0b2337;--hero-ink:#fbf5e6;--hero-muted:#c9d6df;
   --ok:#83c7a5;--wait:#e0bb6c;
 }}
 :root[data-theme="dark"]{
-  --paper:#1b1716;--surface:#252020;--sunk:#2f2927;--ink:#f1e9dc;--muted:#b9ac9c;
-  --line:#40372f;--accent:#e0a3a0;--accent-ink:#2a1414;--gold:#d3ad62;--hero:#321315;--hero-ink:#fbf1df;--hero-muted:#d3bea0;
+  --paper:#10181f;--surface:#18232c;--sunk:#1f2c37;--ink:#eaf0f3;--muted:#a7b5bf;
+  --line:#2f3f4b;--accent:#8fc1e3;--accent-ink:#0e2232;--gold:#d3ad62;--hero:#0b2337;--hero-ink:#fbf5e6;--hero-muted:#c9d6df;
   --ok:#83c7a5;--wait:#e0bb6c;
 }
 *{box-sizing:border-box}
@@ -181,12 +181,65 @@ footer b{font-family:Amiri,serif;font-size:22px;color:var(--hero-ink);display:bl
   .cover{width:170px}
 }
 @media print{.nav,.tools,.acts{display:none}}
+
+/* cover redesign */
+.hero svg.pattern{opacity:.13}
+.hero .wrap{display:flex;flex-direction:column;align-items:center;text-align:center;gap:0;padding-block:44px 92px}
+.avatar{width:124px;height:124px;border-radius:50%;object-fit:cover;object-position:50% 14%;border:3px solid var(--gold);padding:3px;background:var(--hero)}
+.hero .eyebrow{font-family:Amiri,serif;font-weight:700;font-size:clamp(46px,7.5vw,84px);line-height:1.25;color:var(--hero-ink);margin:14px 0 0}
+.hero h1{font-size:clamp(25px,3.4vw,38px);font-weight:400;color:var(--hero-ink);margin-top:4px}
+.hero h1 span{display:block;font-size:.72em;color:#e3c583;margin-bottom:2px}
+.role{color:var(--hero-muted);font-size:18px;margin-top:6px}
+.orn{display:block;width:150px;height:9px;margin:14px 0;background:linear-gradient(var(--gold),var(--gold)) center/100% 1px no-repeat;position:relative}
+.orn::after{content:"";position:absolute;left:50%;top:0;width:9px;height:9px;background:var(--gold);transform:translateX(-50%) rotate(45deg)}
+.hero .lead{max-width:64ch;margin:0 auto;color:var(--hero-ink);font-size:18px}
+.cta{justify-content:center;margin-top:22px}
+.btn{color:var(--hero-ink)}
+.btn.primary{background:var(--gold);border-color:var(--gold);color:#1a1408}
+.stats{background:transparent;border:0;position:relative;margin-top:-50px}
+.stats .wrap{gap:12px}
+.stat,.stat:first-child{background:var(--surface);border:1px solid var(--line);border-top:3px solid var(--gold);border-radius:8px;padding:16px 10px}
+.vband{background:transparent;border:0;padding-inline:24px}
+.vband .wrap{background:var(--surface);border:1px solid var(--line);border-radius:8px;width:min(1072px,100%);padding:18px 24px;margin-top:14px}
+.head h2{position:relative;padding-bottom:10px}
+.head h2::after{content:"";position:absolute;inset:auto 0 0 auto;width:64px;height:3px;background:var(--gold)}
+section.block{border-bottom:0;padding-block:56px}
+#list{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+.pub,.pub.cov{background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:14px}
+.pub.cov{grid-template-columns:104px minmax(0,1fr);gap:16px}
+.pub h3{font-size:18px}
+.mini{height:150px;padding-bottom:32px}
+.mini b{font-size:14px;-webkit-line-clamp:4}
+.mini small{display:none}
+.item{background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:14px 16px;margin-bottom:12px}
+.grid{gap:0 14px}
+.contact a{display:flex;align-items:center;gap:14px}
+.contact a>div{min-width:0}
+.ic{flex:none;width:46px;height:46px;padding:10px;border-radius:50%}
+.ic.wa{background:#25D366;color:#fff}
+.ic.ml{background:var(--accent);color:var(--accent-ink)}
+footer{text-align:center}
+@media (max-width:860px){
+  .hero .wrap{padding-block:30px 82px}
+  .avatar{width:100px;height:100px}
+  .stats .wrap{grid-template-columns:repeat(2,1fr)}
+  .stat:nth-child(n+3){border-top:3px solid var(--gold)}
+  .vband{padding-inline:16px}
+  .vband .wrap{padding:16px}
+  #list{grid-template-columns:minmax(0,1fr)}
+  .pub.cov{grid-template-columns:92px minmax(0,1fr);gap:12px}
+  .mini{height:132px}
+  .role{font-size:16px}
+  .contact span{font-size:15px;overflow-wrap:normal}
+  .contact a{padding:14px 12px;gap:10px}
+  .hero .lead{font-size:17px}
+}
 </style>
 </head>
 <body>
 
 <header class="nav"><div class="wrap">
-  <a class="brand" href="#top">د. عبد الرحمن صحراوي</a>
+  <a class="brand" href="#top">المكتبة الرقمية</a>
   <nav aria-label="أقسام الموقع">
     <a href="#about">السيرة</a><a href="#research">البحوث</a><a href="#book">المؤلفات</a><a href="#education">المؤهلات</a><a href="#ijazat">الإجازات</a><a href="#review">التحكيم</a><a href="#contact">اتصل بنا</a>
   </nav>
@@ -196,14 +249,13 @@ footer b{font-family:Amiri,serif;font-size:22px;color:var(--hero-ink);display:bl
 <div class="hero">
   <svg class="pattern" aria-hidden="true"><defs><pattern id="star" width="72" height="72" patternUnits="userSpaceOnUse"><g fill="none" stroke="currentColor" stroke-width="1"><rect x="16" y="16" width="40" height="40"/><rect x="16" y="16" width="40" height="40" transform="rotate(45 36 36)"/><path d="M0 36h8M64 36h8M36 0v8M36 64v8"/></g></pattern></defs><rect width="100%" height="100%" fill="url(#star)"/></svg>
   <div class="wrap">
-    <div class="text">
-      <p class="eyebrow">باحث في السُّنَّة النبوية وعلومها · محقِّق ومفهرس مخطوطات</p>
-      <h1>د. عبد الرحمن صحراوي</h1>
-      <p class="full">عبد الرحمن بن محمد الصغير صحراوي</p>
-      <p class="lead">عناية بعلم العلل ونقد الحديث، والموطأ والمدرسة المالكية، وتراث علماء الجزائر في الحديث النبوي، وقضايا السنة المعاصرة.</p>
-      <div class="cta"><a class="btn primary" href="#research">البحوث العلمية</a><a class="btn" href="#about">السيرة العلمية</a></div>
-    </div>
-    <div class="arch"><img src="assets/portrait.jpg" alt="صورة الدكتور عبد الرحمن صحراوي" width="600" height="811"></div>
+    <img class="avatar" src="assets/portrait.jpg" alt="صورة الدكتور عبد الرحمن صحراوي" width="600" height="811">
+    <p class="eyebrow">المكتبة الرقمية</p>
+    <h1><span>لمؤلفات وبحوث</span>د. عبد الرحمن بن محمد الصغير صحراوي</h1>
+    <p class="role">باحث في السُّنَّة النبوية وعلومها · محقِّق ومفهرس مخطوطات</p>
+    <i class="orn" aria-hidden="true"></i>
+    <p class="lead">عناية بعلم العلل ونقد الحديث، والموطأ والمدرسة المالكية، وتراث علماء الجزائر في الحديث النبوي، وقضايا السنة المعاصرة.</p>
+    <div class="cta"><a class="btn primary" href="#research">تصفّح البحوث</a><a class="btn" href="#book">المؤلفات</a><a class="btn" href="#about">السيرة العلمية</a></div>
   </div>
 </div>
 
@@ -312,13 +364,13 @@ footer b{font-family:Amiri,serif;font-size:22px;color:var(--hero-ink);display:bl
 <section class="block" id="contact"><div class="wrap">
   <div class="head"><h2>اتصل بنا</h2><p>للتواصل العلمي والاستفسار عن البحوث</p></div>
   <div class="contact">
-    <a href="mailto:abderrahmane199426@gmail.com"><b>البريد الإلكتروني</b><span>abderrahmane199426@gmail.com</span></a>
-    <a href="https://wa.me/966568723253" target="_blank" rel="noopener"><b>واتساب</b><span>+966 56 872 3253</span></a>
+    <a href="mailto:abderrahmane199426@gmail.com"><svg class="ic ml" viewBox="0 0 24 24" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" d="M3 6h18v12H3zM3 7l9 6.5L21 7"/></svg><div><b>البريد الإلكتروني</b><span>abderrahmane199426@gmail.com</span></div></a>
+    <a href="https://wa.me/966568723253" target="_blank" rel="noopener" aria-label="مراسلة عبر واتساب"><svg class="ic wa" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg><div><b>واتساب</b><span>+966 56 872 3253</span></div></a>
   </div>
 </div></section>
 </main>
 
-<footer><div class="wrap"><b>د. عبد الرحمن بن محمد الصغير صحراوي</b>باحث في السُّنَّة النبوية وعلومها · آخر تحديث للبيانات: 20 نوفمبر 2026م</div></footer>
+<footer><div class="wrap"><b>المكتبة الرقمية · د. عبد الرحمن بن محمد الصغير صحراوي</b>باحث في السُّنَّة النبوية وعلومها · آخر تحديث للبيانات: 20 نوفمبر 2026م</div></footer>
 
 <script>
 const ASJP='https://asjp.cerist.dz/en/article/';
