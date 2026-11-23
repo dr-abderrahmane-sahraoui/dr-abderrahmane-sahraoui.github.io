@@ -496,10 +496,18 @@ fetch('https://dr-sahraoui.goatcounter.com/counter/TOTAL.json?start=2026-11-23&e
 (function(){
   const API='https://dr-sahraoui.goatcounter.com/counter/TOTAL.json',FIRST='2026-11-23';
   const day=n=>new Date(Date.now()+n*864e5).toISOString().slice(0,10);
-  const show=(id,start,end)=>fetch(`${API}?start=${start}&end=${end}`).then(r=>r.ok?r.json():Promise.reject()).then(d=>{document.getElementById(id).textContent=d.count}).catch(()=>{});
-  show('vtoday',day(0),day(1));
-  if(day(-1)>=FIRST)show('vyest',day(-1),day(0));
-  else document.getElementById('vyest').title='يبدأ احتساب زوار أمس من 24 نوفمبر 2026';
+  const show=(id,start,end)=>fetch(`${API}?start=${start}&end=${end}`,{cache:'no-store'}).then(r=>r.ok?r.json():Promise.reject()).then(d=>{document.getElementById(id).textContent=d.count}).catch(()=>{});
+  let last=0;
+  function tick(){
+    last=Date.now();
+    show('vcount',FIRST,day(1));
+    show('vtoday',day(0),day(1));
+    if(day(-1)>=FIRST)show('vyest',day(-1),day(0));
+    else document.getElementById('vyest').title='يبدأ احتساب زوار أمس من 24 نوفمبر 2026';
+  }
+  tick();
+  setInterval(()=>{if(!document.hidden)tick()},60000);
+  document.addEventListener('visibilitychange',()=>{if(!document.hidden&&Date.now()-last>=60000)tick()});
 })();
 (function(){
   const box=document.getElementById('vc'),note=document.getElementById('vnote');
