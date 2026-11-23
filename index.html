@@ -260,6 +260,10 @@ h1,h2,h3{font-family:"Aref Ruqaa",Amiri,serif}
 .vtotal{border-inline-end:3px double var(--line)}
 .vtotal b{font-family:"Aref Ruqaa",serif;font-size:60px}
 .vtotal span{font-size:19px}
+.vdays{display:grid;grid-template-columns:1fr 1fr;margin-top:8px;border-top:1px solid var(--line);padding-top:6px}
+.vdays div+div{border-inline-start:1px solid var(--line)}
+.vdays small{display:block;font-size:16px;color:var(--muted);line-height:1.5}
+.vdays strong{display:block;font-family:"Aref Ruqaa",serif;font-weight:700;font-size:28px;line-height:1.3;color:var(--accent)}
 .vflags[hidden]{display:none}
 .vflags h2{font-size:30px;text-align:center;margin-bottom:10px}
 .vc{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:10px}
@@ -344,7 +348,7 @@ footer b{font-family:"Aref Ruqaa",serif;color:var(--gold2)}
 </div></div>
 
 <section class="vband" aria-label="إحصاءات الزوار"><div class="wrap">
-  <div class="vtotal"><b id="vcount">—</b><span>زيارة للموقع</span></div>
+  <div class="vtotal"><b id="vcount">—</b><span>إجمالي الزيارات</span><div class="vdays"><div><small>اليوم</small><strong id="vtoday">—</strong></div><div><small>أمس</small><strong id="vyest">—</strong></div></div></div>
   <div class="vflags"><h2>الزوار من البلدان</h2><ul class="vc" id="vc"></ul><p class="vnote" id="vnote"></p></div>
 </div></section>
 
@@ -488,7 +492,15 @@ list.addEventListener('click',async e=>{const b=e.target.closest('[data-c]');if(
   try{await navigator.clipboard.writeText(cite(P[b.dataset.c]));b.textContent='تم النسخ'}catch{b.textContent='تعذّر النسخ'}
   setTimeout(()=>b.textContent='نسخ التوثيق',1600)});
 render();
-fetch('https://dr-sahraoui.goatcounter.com/counter/TOTAL.json').then(r=>r.ok?r.json():Promise.reject()).then(d=>{document.getElementById('vcount').textContent=d.count}).catch(()=>{document.querySelector('.vtotal').hidden=true;document.querySelector('.vband .wrap').style.gridTemplateColumns='minmax(0,1fr)'});
+fetch('https://dr-sahraoui.goatcounter.com/counter/TOTAL.json?start=2026-11-23&end='+new Date(Date.now()+864e5).toISOString().slice(0,10)).then(r=>r.ok?r.json():Promise.reject()).then(d=>{document.getElementById('vcount').textContent=d.count}).catch(()=>{document.querySelector('.vtotal').hidden=true;document.querySelector('.vband .wrap').style.gridTemplateColumns='minmax(0,1fr)'});
+(function(){
+  const API='https://dr-sahraoui.goatcounter.com/counter/TOTAL.json',FIRST='2026-11-23';
+  const day=n=>new Date(Date.now()+n*864e5).toISOString().slice(0,10);
+  const show=(id,start,end)=>fetch(`${API}?start=${start}&end=${end}`).then(r=>r.ok?r.json():Promise.reject()).then(d=>{document.getElementById(id).textContent=d.count}).catch(()=>{});
+  show('vtoday',day(0),day(1));
+  if(day(-1)>=FIRST)show('vyest',day(-1),day(0));
+  else document.getElementById('vyest').title='يبدأ احتساب زوار أمس من 24 نوفمبر 2026';
+})();
 (function(){
   const box=document.getElementById('vc'),note=document.getElementById('vnote');
   const names=new Intl.DisplayNames(['ar'],{type:'region'});
