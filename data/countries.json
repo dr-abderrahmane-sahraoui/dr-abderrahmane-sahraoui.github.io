@@ -1,13 +1,53 @@
 {
- "updated": "2026-11-23T10:31:40Z",
+ "updated": "2026-11-23T22:40:13Z",
  "countries": [
   {
    "code": "dz",
-   "visitors": 3
+   "visitors": 40
   },
   {
    "code": "sa",
+   "visitors": 24
+  },
+  {
+   "code": "us",
+   "visitors": 6
+  },
+  {
+   "code": "ly",
    "visitors": 3
+  },
+  {
+   "code": "tn",
+   "visitors": 2
+  },
+  {
+   "code": "eg",
+   "visitors": 1
+  },
+  {
+   "code": "iq",
+   "visitors": 1
+  },
+  {
+   "code": "ma",
+   "visitors": 1
+  },
+  {
+   "code": "mr",
+   "visitors": 1
+  },
+  {
+   "code": "my",
+   "visitors": 1
+  },
+  {
+   "code": "nl",
+   "visitors": 1
+  },
+  {
+   "code": "qa",
+   "visitors": 1
   },
   {
    "code": "td",
