@@ -1,9 +1,9 @@
 {
- "updated": "2026-11-23T22:40:13Z",
+ "updated": "2026-11-24T06:57:51Z",
  "countries": [
   {
    "code": "dz",
-   "visitors": 40
+   "visitors": 44
   },
   {
    "code": "sa",
@@ -11,7 +11,7 @@
   },
   {
    "code": "us",
-   "visitors": 6
+   "visitors": 7
   },
   {
    "code": "ly",
@@ -23,6 +23,10 @@
   },
   {
    "code": "eg",
+   "visitors": 1
+  },
+  {
+   "code": "in",
    "visitors": 1
   },
   {
