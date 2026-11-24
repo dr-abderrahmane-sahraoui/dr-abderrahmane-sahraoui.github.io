@@ -1,17 +1,17 @@
 {
- "updated": "2026-11-24T06:57:51Z",
+ "updated": "2026-11-24T18:54:28Z",
  "countries": [
   {
-   "code": "dz",
-   "visitors": 44
+   "code": "sa",
+   "visitors": 49
   },
   {
-   "code": "sa",
-   "visitors": 24
+   "code": "dz",
+   "visitors": 46
   },
   {
    "code": "us",
-   "visitors": 7
+   "visitors": 9
   },
   {
    "code": "ly",
@@ -23,6 +23,10 @@
   },
   {
    "code": "eg",
+   "visitors": 1
+  },
+  {
+   "code": "ie",
    "visitors": 1
   },
   {
