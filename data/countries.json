@@ -1,13 +1,13 @@
 {
- "updated": "2026-11-26T15:20:22Z",
+ "updated": "2026-11-27T00:36:58Z",
  "countries": [
   {
    "code": "sa",
-   "visitors": 75
+   "visitors": 78
   },
   {
    "code": "dz",
-   "visitors": 52
+   "visitors": 54
   },
   {
    "code": "us",
@@ -18,11 +18,11 @@
    "visitors": 3
   },
   {
-   "code": "ma",
-   "visitors": 2
+   "code": "sn",
+   "visitors": 3
   },
   {
-   "code": "sn",
+   "code": "ma",
    "visitors": 2
   },
   {
