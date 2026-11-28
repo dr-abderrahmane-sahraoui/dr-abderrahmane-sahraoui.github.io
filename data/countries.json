@@ -1,9 +1,9 @@
 {
- "updated": "2026-11-28T02:42:48Z",
+ "updated": "2026-11-28T11:50:26Z",
  "countries": [
   {
    "code": "sa",
-   "visitors": 80
+   "visitors": 81
   },
   {
    "code": "dz",
@@ -11,7 +11,7 @@
   },
   {
    "code": "us",
-   "visitors": 13
+   "visitors": 14
   },
   {
    "code": "ly",
@@ -20,6 +20,10 @@
   {
    "code": "sn",
    "visitors": 3
+  },
+  {
+   "code": "iq",
+   "visitors": 2
   },
   {
    "code": "ma",
@@ -43,10 +47,6 @@
   },
   {
    "code": "in",
-   "visitors": 1
-  },
-  {
-   "code": "iq",
    "visitors": 1
   },
   {
